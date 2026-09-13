@@ -1,0 +1,45 @@
+# Version Control
+.git
+.gitignore
+
+# Python Bytecode and Cache (compiled files)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Local Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Distribution, Packaging, and Metadata
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Environment Variables & Secrets
+.env
+.env.*
+*.local
+
+# IDE and Text Editor configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Logs
+*.log
