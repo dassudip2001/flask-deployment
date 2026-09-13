@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: email-spam-api
+  labels:
+    app: email-spam-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: email-spam-api
+  template:
+    metadata:
+      labels:
+        app: email-spam-api
+    spec:
+      containers:
+        - name: email-spam-api
+          image: your-dockerhub-username/email-spam-api:latest
+          ports:
+            - containerPort: 8000
+          imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: email-spam-api-service
+spec:
+  selector:
+    app: email-spam-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  type: LoadBalancer
